@@ -1,6 +1,5 @@
-//Node class that structures the Node
-@SuppressWarnings("rawtypes")
-public class Node<T>
+package BinarySearchTree;
+public class Node
 	{
 		public int value;
 		public Node left;
@@ -9,5 +8,10 @@ public class Node<T>
 		{
 			this.value = value;
 		}
-	}
-	
+		public void displayNode()
+		{
+			System.out.println("");
+			System.out.println(value);
+			
+		}
+}

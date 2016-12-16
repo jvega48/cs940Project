@@ -1,12 +1,11 @@
+package BinarySearchTree;
 
 public class BinarySearchTree {
-	@SuppressWarnings("rawtypes")
 	Node root;
 	//Method to insert a node
-	@SuppressWarnings("rawtypes")
 	public void insert(int value)
 	{
-		Node node = new Node<>(value);
+		Node node = new Node(value);
 		if(root == null){
 		root = node;
 		return;
@@ -15,7 +14,7 @@ public class BinarySearchTree {
 	}
 	
 	//checking where to insert the node in the three
-	@SuppressWarnings({ "unchecked", "rawtypes" })
+	
 	private void insetNode(Node root, Node node)
 	{
 		if(root.value > node.value)
@@ -50,7 +49,6 @@ public class BinarySearchTree {
 			return 0;
 		}
 		//keep track of the current node to check the values 
-		@SuppressWarnings("rawtypes")
 		Node current = root;
 		while(current.left != null)
 		{
@@ -59,7 +57,7 @@ public class BinarySearchTree {
 		return current.value;
 	}
 	//checks the max value in the tree
-	@SuppressWarnings("rawtypes")
+
 	public int maxValue()
 	{
 		if(root == null)
@@ -87,7 +85,7 @@ public class BinarySearchTree {
 		System.out.println("");
 	}
 	//recursive method to print of the node's
-	@SuppressWarnings("rawtypes")
+
 	private void orderRecursively(Node current)
 	{
 		if(current == null)
@@ -106,7 +104,7 @@ public class BinarySearchTree {
 		System.out.println("");
 	}
 	//recursive method to print of the node's
-	@SuppressWarnings("rawtypes")
+
 	private void preorderRecursively(Node current)
 	{
 		if(current == null)
@@ -124,7 +122,7 @@ public class BinarySearchTree {
 			System.out.println("");
 		}
 		//recursive method to print of the node's
-		@SuppressWarnings("rawtypes")
+
 		private void postorderRecursively(Node current)
 		{
 			if(current == null)
@@ -135,6 +133,25 @@ public class BinarySearchTree {
 			postorderRecursively(current.right);
 			System.out.println(current.value+ ",");
 		}
+		public Node find(int key)
+		{
+			Node current = root;
+			while(current.value != key)
+			{
+				if(key < current.value)
+				{
+					current = current.left;
+				}
+				else
+				{
+					current = current.right;
+				}
+				if(current == null)
+				{
+					return null;
+				}
+			}
+			return current;
+		}
 		
 }
-
